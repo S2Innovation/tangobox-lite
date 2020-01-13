@@ -1,0 +1,2 @@
+TANGO_HOST=localhost:10000
+TANGO_ROOT=/usr/local

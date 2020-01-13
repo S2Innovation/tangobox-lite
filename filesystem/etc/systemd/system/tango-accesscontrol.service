@@ -1,0 +1,14 @@
+[Unit]
+Description=TangoAccessControl device server
+Requires=tango-db.service
+Requires=mysql.service
+After=tango-db.service
+
+[Service]
+Restart=always
+RestartSec=10
+User=tango
+Environment=MYSQL_USER=tango
+Environment=MYSQL_PASSWORD=secret
+Environment=SUPER_TANGO=true
+ExecStart=/usr/local/bin/TangoAccessControl 1

@@ -1,0 +1,12 @@
+[Unit]
+Description = Tango Database device server
+Requires=mysql.service
+After=mysql.service
+
+[Service]
+Restart=always
+RestartSec=5
+User=tango
+Environment=MYSQL_USER=tango
+Environment=MYSQL_PASSWORD=secret
+ExecStart=/usr/local/bin/DataBaseds 2 -ORBendPoint giop:tcp::10000

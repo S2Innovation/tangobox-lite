@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+
+import sys
+import tango
+
+db = tango.Database()
+
+info = tango.DbServerInfo()
+info.name = sys.argv[1]
+info.host = sys.argv[2]
+info.mode = int(sys.argv[3])
+info.level = int(sys.argv[4])
+db.put_server_info(info)
